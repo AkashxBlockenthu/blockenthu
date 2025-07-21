@@ -69,17 +69,22 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <div ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern">
-      {/* Background Glow Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+    <div ref={heroRef} className="relative min-h-screen overflow-hidden grid-pattern">
+      {/* Fullscreen Spline Background */}
+      <div ref={splineRef} className="absolute inset-0">
+        <iframe
+          src="https://my.spline.design/orb-H0Jy0GxlSiGV5ZX2G8tjNlyv/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left space-y-8">
+      {/* Content Overlay */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
             <h1 
               ref={headlineRef}
               className="text-5xl lg:text-7xl font-bold leading-tight"
@@ -93,12 +98,12 @@ export const HeroSection = () => {
 
             <p 
               ref={subheadlineRef}
-              className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed"
+              className="text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
               Bridge assets seamlessly across <span className="text-primary font-semibold">15+ blockchains</span> with the lowest fees and fastest execution times in DeFi.
             </p>
 
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="glow-button magnetic-btn text-lg px-8 py-4"
@@ -117,45 +122,11 @@ export const HeroSection = () => {
               </Button>
             </div>
           </div>
-
-          {/* Spline 3D Model */}
-          <div ref={splineRef} className="relative h-96 lg:h-[600px]">
-            <iframe
-              src="https://my.spline.design/orb-H0Jy0GxlSiGV5ZX2G8tjNlyv/"
-              frameBorder="0"
-              width="100%"
-              height="100%"
-              className="rounded-2xl"
-            />
-            
-            {/* Floating Chain Logos */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Ethereum */}
-              <div className="chain-logo absolute top-1/4 left-1/4 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold orbit">
-                ETH
-              </div>
-              
-              {/* Binance Smart Chain */}
-              <div className="chain-logo absolute top-1/3 right-1/4 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold orbit" style={{ animationDelay: '5s' }}>
-                BSC
-              </div>
-              
-              {/* Polygon */}
-              <div className="chain-logo absolute bottom-1/3 left-1/3 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold orbit" style={{ animationDelay: '10s' }}>
-                MATIC
-              </div>
-              
-              {/* Avalanche */}
-              <div className="chain-logo absolute bottom-1/4 right-1/3 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold orbit" style={{ animationDelay: '15s' }}>
-                AVAX
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
