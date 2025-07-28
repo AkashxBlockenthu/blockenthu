@@ -15,15 +15,11 @@ export const TrustSection = () => {
     { value: "0.1s", label: "Average Speed" }
   ];
 
-  const chains = [
-    { name: "Ethereum", color: "bg-blue-500" },
-    { name: "Binance", color: "bg-yellow-500" },
-    { name: "Polygon", color: "bg-purple-500" },
-    { name: "Avalanche", color: "bg-red-500" },
-    { name: "Arbitrum", color: "bg-blue-400" },
-    { name: "Optimism", color: "bg-red-400" },
-    { name: "Fantom", color: "bg-blue-600" },
-    { name: "Solana", color: "bg-green-500" }
+  const networks = [
+    "Ethereum", "Bitcoin", "BNB Chain (BSC)", "Solana", "Polygon (PoS)", 
+    "Arbitrum", "Optimism", "Avalanche", "Base", "Fantom", 
+    "zkSync Era", "Linea", "Starknet", "Cardano", "Near Protocol", 
+    "Aptos", "Sui", "Cronos", "Klaytn", "Hedera Hashgraph (HBAR)"
   ];
 
   // Animations disabled per user request
@@ -37,16 +33,19 @@ export const TrustSection = () => {
             Trusted by leading DeFi protocols and traders worldwide
           </p>
           
-          {/* Chain Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {chains.map((chain, index) => (
-              <div 
-                key={index}
-                className={`chain-item w-16 h-16 ${chain.color} rounded-full flex items-center justify-center text-white text-sm font-bold hover:scale-110 transition-transform cursor-pointer`}
-              >
-                {chain.name.slice(0, 3).toUpperCase()}
-              </div>
-            ))}
+          {/* Network Marquee */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...networks, ...networks].map((network, index) => (
+                <div 
+                  key={index}
+                  className="inline-flex items-center mx-8 text-lg font-semibold text-primary/80 hover:text-primary transition-colors"
+                >
+                  <div className="w-3 h-3 bg-primary rounded-full mr-3 animate-pulse"></div>
+                  {network}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
