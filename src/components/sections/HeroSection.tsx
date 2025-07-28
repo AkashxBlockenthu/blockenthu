@@ -2,8 +2,10 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, PlayCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadlineRef = useRef<HTMLParagraphElement>(null);
@@ -107,6 +109,7 @@ export const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="glow-button magnetic-btn text-lg px-8 py-4"
+                onClick={() => navigate('/app')}
               >
                 Launch App
                 <ArrowRight className="ml-2 h-5 w-5" />
