@@ -54,7 +54,7 @@ export const TrustSection = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="stat-card glass-card p-8 text-center feature-card relative overflow-hidden"
+              className="stat-card glass-card p-8 text-center relative overflow-hidden"
             >
               <div className="stat-number text-4xl lg:text-5xl font-bold text-primary mb-2">
                 {stat.value}
@@ -63,8 +63,8 @@ export const TrustSection = () => {
                 {stat.label}
               </div>
               
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Static background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-100" />
             </div>
           ))}
         </div>
