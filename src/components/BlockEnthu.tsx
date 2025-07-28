@@ -34,11 +34,12 @@ export const BlockEnthu = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Logo */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-primary/80 flex items-center justify-center">
-                  <span className="text-xl font-bold text-primary-foreground">B</span>
-                </div>
-                <span className="text-2xl font-bold">BlockEnthu</span>
+              <div className="flex items-center">
+                <img 
+                  src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
+                  alt="BlockEnthu Logo" 
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-muted-foreground">
                 The future of cross-chain DeFi, today.
