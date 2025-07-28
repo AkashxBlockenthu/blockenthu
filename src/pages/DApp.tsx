@@ -21,7 +21,7 @@ export default function DApp() {
               <img 
                 src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
                 alt="BlockEnthu Logo" 
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             <WalletConnect />
