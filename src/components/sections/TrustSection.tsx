@@ -26,66 +26,7 @@ export const TrustSection = () => {
     { name: "Solana", color: "bg-green-500" }
   ];
 
-  useEffect(() => {
-    gsap.from(".stat-card", {
-      scrollTrigger: {
-        trigger: statsRef.current,
-        start: "top 80%",
-        end: "bottom 20%"
-      },
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out"
-    });
-
-    gsap.from(".chain-item", {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%"
-      },
-      scale: 0,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: "back.out(1.2)"
-    });
-
-    // Animated counter effect
-    gsap.utils.toArray(".stat-number").forEach((element: any) => {
-      const text = element.textContent;
-      if (text.includes("$") || text.includes("+")) {
-        const numValue = parseFloat(text.replace(/[^0-9.]/g, ''));
-        const obj = { val: 0 };
-        
-        gsap.to(obj, {
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%"
-          },
-          val: numValue,
-          duration: 2,
-          ease: "power2.out",
-          onUpdate: () => {
-            if (text.includes("$") && text.includes("B")) {
-              element.textContent = `$${obj.val.toFixed(1)}B+`;
-            } else if (text.includes("M")) {
-              element.textContent = `${obj.val.toFixed(0)}M+`;
-            } else if (text.includes("s")) {
-              element.textContent = `${obj.val.toFixed(1)}s`;
-            } else {
-              element.textContent = `${obj.val.toFixed(0)}+`;
-            }
-          }
-        });
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  // Animations disabled per user request
 
   return (
     <div ref={sectionRef} className="section-spacing bg-card/50">
