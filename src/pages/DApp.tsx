@@ -17,9 +17,12 @@ export default function DApp() {
       <header className="border-b border-border/50 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-primary">BlockEnthu</h1>
-              <span className="text-sm text-muted-foreground">dApp</span>
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
+                alt="BlockEnthu Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             <WalletConnect />
           </div>
