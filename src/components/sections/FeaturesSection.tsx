@@ -2,33 +2,25 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Zap, TrendingUp, Shield, ArrowRight } from 'lucide-react';
-
 gsap.registerPlugin(ScrollTrigger);
-
 export const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const features = [
-    {
-      icon: Zap,
-      title: "Lightning-Fast Swaps",
-      description: "Execute cross-chain swaps in seconds with our optimized routing engine and advanced liquidity aggregation.",
-      visual: "⚡"
-    },
-    {
-      icon: TrendingUp,
-      title: "Best Rates Guaranteed",
-      description: "Our intelligent aggregator scans all DEXs and bridges to find you the most competitive rates every time.",
-      visual: "📈"
-    },
-    {
-      icon: Shield,
-      title: "Maximum Security",
-      description: "Audited smart contracts and non-custodial architecture ensure your funds remain safe and under your control.",
-      visual: "🛡️"
-    }
-  ];
-
+  const features = [{
+    icon: Zap,
+    title: "Lightning-Fast Swaps",
+    description: "Execute cross-chain swaps in seconds with our optimized routing engine and advanced liquidity aggregation.",
+    visual: "⚡"
+  }, {
+    icon: TrendingUp,
+    title: "Best Rates Guaranteed",
+    description: "Our intelligent aggregator scans all DEXs and bridges to find you the most competitive rates every time.",
+    visual: "📈"
+  }, {
+    icon: Shield,
+    title: "Maximum Security",
+    description: "Audited smart contracts and non-custodial architecture ensure your funds remain safe and under your control.",
+    visual: "🛡️"
+  }];
   useEffect(() => {
     gsap.from(".feature-card", {
       scrollTrigger: {
@@ -55,14 +47,11 @@ export const FeaturesSection = () => {
       duration: 2,
       ease: "none"
     });
-
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  return (
-    <div ref={sectionRef} className="section-spacing">
+  return <div ref={sectionRef} className="section-spacing">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -79,21 +68,15 @@ export const FeaturesSection = () => {
         {/* Features Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div
-                key={index}
-                className="feature-card glass-card p-8 text-center relative overflow-hidden group cursor-pointer"
-              >
+          const IconComponent = feature.icon;
+          return <div key={index} className="feature-card glass-card p-8 text-center relative overflow-hidden group cursor-pointer">
                 {/* Background Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="feature-icon w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mb-4">
-                    <IconComponent className="w-10 h-10 text-primary-foreground" />
-                  </div>
-                  <div className="text-4xl">{feature.visual}</div>
+                  
+                  
                 </div>
 
                 {/* Content */}
@@ -114,21 +97,16 @@ export const FeaturesSection = () => {
 
                 {/* Animated Particles */}
                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  {Array.from({ length: 3 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-2 h-2 bg-primary/30 rounded-full animate-ping"
-                      style={{
-                        left: `${20 + i * 30}%`,
-                        top: `${30 + i * 20}%`,
-                        animationDelay: `${i * 0.5}s`
-                      }}
-                    />
-                  ))}
+                  {Array.from({
+                length: 3
+              }).map((_, i) => <div key={i} className="absolute w-2 h-2 bg-primary/30 rounded-full animate-ping" style={{
+                left: `${20 + i * 30}%`,
+                top: `${30 + i * 20}%`,
+                animationDelay: `${i * 0.5}s`
+              }} />)}
                 </div>
-              </div>
-            );
-          })}
+              </div>;
+        })}
         </div>
 
         {/* Visual Flow Diagram */}
@@ -168,6 +146,5 @@ export const FeaturesSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
