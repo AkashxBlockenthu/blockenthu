@@ -153,23 +153,40 @@ export const CTASection = () => {
             
             {/* Floating Blockchain Cubes */}
             <div className="absolute inset-0">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-primary/80 shadow-lg"
-                  style={{
-                    left: `${20 + Math.sin(i * 0.8) * 30}%`,
-                    top: `${20 + Math.cos(i * 0.8) * 30}%`,
-                    animation: `float ${6 + i}s ease-in-out infinite`,
-                    animationDelay: `${i * 0.5}s`,
-                    transform: 'perspective(500px) rotateX(45deg) rotateY(45deg)'
-                  }}
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-primary/80 to-primary rounded-lg flex items-center justify-center text-primary-foreground text-xs font-bold">
-                    {i % 2 === 0 ? 'ETH' : 'BSC'}
+              {Array.from({ length: 8 }).map((_, i) => {
+                const logos = [
+                  '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png', // Ethereum
+                  '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', // BNB
+                  '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', // Solana
+                  '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', // Bitcoin
+                  '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', // Avalanche
+                  '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png', // USDT
+                  '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png', // USDC
+                  '/lovable-uploads/37c33a9c-66a6-4d58-87b5-dbf99e3f9aa1.png', // TrueUSD
+                ];
+                
+                return (
+                  <div
+                    key={i}
+                    className="absolute w-12 h-12 rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 backdrop-blur-sm shadow-lg border border-white/10"
+                    style={{
+                      left: `${20 + Math.sin(i * 0.8) * 30}%`,
+                      top: `${20 + Math.cos(i * 0.8) * 30}%`,
+                      animation: `float ${6 + i}s ease-in-out infinite`,
+                      animationDelay: `${i * 0.5}s`,
+                      transform: 'perspective(500px) rotateX(45deg) rotateY(45deg)'
+                    }}
+                  >
+                    <div className="w-full h-full rounded-lg flex items-center justify-center p-2">
+                      <img 
+                        src={logos[i]} 
+                        alt="Crypto logo" 
+                        className="w-8 h-8 object-contain opacity-90"
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Center Glow */}
