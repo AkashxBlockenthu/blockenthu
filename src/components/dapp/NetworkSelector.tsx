@@ -16,13 +16,11 @@ interface Network {
 }
 
 const networks: Network[] = [
-  { id: 'ethereum', name: 'Ethereum', icon: '🔷', color: 'bg-blue-500' },
-  { id: 'polygon', name: 'Polygon', icon: '🟣', color: 'bg-purple-500' },
-  { id: 'bsc', name: 'BSC', icon: '🟡', color: 'bg-yellow-500' },
-  { id: 'arbitrum', name: 'Arbitrum', icon: '🔵', color: 'bg-blue-600' },
-  { id: 'optimism', name: 'Optimism', icon: '🔴', color: 'bg-red-500' },
-  { id: 'avalanche', name: 'Avalanche', icon: '⛰️', color: 'bg-red-600' },
-  { id: 'solana', name: 'Solana', icon: '🟢', color: 'bg-green-500' },
+  { id: 'ethereum', name: 'Ethereum', icon: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png', color: 'bg-blue-500' },
+  { id: 'bsc', name: 'BSC', icon: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', color: 'bg-yellow-500' },
+  { id: 'solana', name: 'Solana', icon: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', color: 'bg-green-500' },
+  { id: 'avalanche', name: 'Avalanche', icon: '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', color: 'bg-red-600' },
+  { id: 'bitcoin', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', color: 'bg-orange-500' },
 ];
 
 interface NetworkSelectorProps {
@@ -46,9 +44,11 @@ export const NetworkSelector = ({ value, onChange, label }: NetworkSelectorProps
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="w-full justify-between glass-card h-12">
             <div className="flex items-center gap-3">
-              <div className={`w-6 h-6 rounded-full ${selectedNetwork.color} flex items-center justify-center text-xs`}>
-                {selectedNetwork.icon}
-              </div>
+              <img 
+                src={selectedNetwork.icon} 
+                alt={selectedNetwork.name} 
+                className="w-6 h-6 rounded-full object-cover"
+              />
               <span className="font-medium">{selectedNetwork.name}</span>
             </div>
             <ChevronDown className="h-4 w-4 opacity-50" />
@@ -62,9 +62,11 @@ export const NetworkSelector = ({ value, onChange, label }: NetworkSelectorProps
               onClick={() => onChange(network.id)}
               className="flex items-center gap-3 p-3 cursor-pointer hover:bg-white/5"
             >
-              <div className={`w-6 h-6 rounded-full ${network.color} flex items-center justify-center text-xs`}>
-                {network.icon}
-              </div>
+              <img 
+                src={network.icon} 
+                alt={network.name} 
+                className="w-6 h-6 rounded-full object-cover"
+              />
               <span className="font-medium">{network.name}</span>
               {network.id === value && (
                 <div className="ml-auto w-2 h-2 bg-primary rounded-full" />

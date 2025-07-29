@@ -16,10 +16,14 @@ export const TrustSection = () => {
   ];
 
   const networks = [
-    "Ethereum", "Bitcoin", "BNB Chain (BSC)", "Solana", "Polygon (PoS)", 
-    "Arbitrum", "Optimism", "Avalanche", "Base", "Fantom", 
-    "zkSync Era", "Linea", "Starknet", "Cardano", "Near Protocol", 
-    "Aptos", "Sui", "Cronos", "Klaytn", "Hedera Hashgraph (HBAR)"
+    { name: "Ethereum", logo: "/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png" },
+    { name: "Bitcoin", logo: "/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png" },
+    { name: "BNB Chain", logo: "/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png" },
+    { name: "Solana", logo: "/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png" },
+    { name: "Avalanche", logo: "/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png" },
+    { name: "USDT", logo: "/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png" },
+    { name: "USDC", logo: "/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png" },
+    { name: "TrueUSD", logo: "/lovable-uploads/37c33a9c-66a6-4d58-87b5-dbf99e3f9aa1.png" }
   ];
 
   // Animations disabled per user request
@@ -41,8 +45,12 @@ export const TrustSection = () => {
                   key={index}
                   className="inline-flex items-center mx-8 text-lg font-semibold text-primary/80 hover:text-primary transition-colors"
                 >
-                  <div className="w-3 h-3 bg-primary rounded-full mr-3 animate-pulse"></div>
-                  {network}
+                  <img 
+                    src={network.logo} 
+                    alt={network.name} 
+                    className="w-8 h-8 mr-3 rounded-full object-cover"
+                  />
+                  {network.name}
                 </div>
               ))}
             </div>

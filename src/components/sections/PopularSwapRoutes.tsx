@@ -2,21 +2,66 @@ import { ArrowRight, TrendingUp } from 'lucide-react';
 
 export const PopularSwapRoutes = () => {
   const swapRoutes = [
-    { from: 'ETH', to: 'SOL', fromColor: 'bg-blue-500', toColor: 'bg-purple-500' },
-    { from: 'BNB', to: 'SOL', fromColor: 'bg-yellow-500', toColor: 'bg-purple-500' },
-    { from: 'BERA', to: 'ETH', fromColor: 'bg-orange-500', toColor: 'bg-blue-500' },
-    { from: 'ETH', to: 'TON', fromColor: 'bg-blue-500', toColor: 'bg-cyan-500' },
-    { from: 'ETH', to: 'BNB', fromColor: 'bg-blue-500', toColor: 'bg-yellow-500' },
-    { from: 'TRX', to: 'USDT', fromColor: 'bg-red-500', toColor: 'bg-green-500' },
-    { from: 'USDT', to: 'BTC', fromColor: 'bg-green-500', toColor: 'bg-orange-400' },
-    { from: 'USDT', to: 'SOL', fromColor: 'bg-green-500', toColor: 'bg-purple-500' },
-    { from: 'BNB', to: 'USDT', fromColor: 'bg-yellow-500', toColor: 'bg-green-500' },
-    { from: 'USDT', to: 'ETH', fromColor: 'bg-green-500', toColor: 'bg-blue-500' },
-    { from: 'ETH', to: 'USDT', fromColor: 'bg-blue-500', toColor: 'bg-green-500' },
-    { from: 'WETH', to: 'ETH', fromColor: 'bg-gray-500', toColor: 'bg-blue-500' },
-    { from: 'TON', to: 'USDT', fromColor: 'bg-cyan-500', toColor: 'bg-green-500' },
-    { from: 'ETH', to: 'USDC', fromColor: 'bg-blue-500', toColor: 'bg-blue-400' },
-    { from: 'BTC', to: 'USDT', fromColor: 'bg-orange-400', toColor: 'bg-green-500' },
+    { 
+      from: 'ETH', 
+      to: 'SOL', 
+      fromLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png',
+      toLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png'
+    },
+    { 
+      from: 'BTC', 
+      to: 'USDT', 
+      fromLogo: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png',
+      toLogo: '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png'
+    },
+    { 
+      from: 'ETH', 
+      to: 'USDC', 
+      fromLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png',
+      toLogo: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png'
+    },
+    { 
+      from: 'BNB', 
+      to: 'USDT', 
+      fromLogo: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png',
+      toLogo: '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png'
+    },
+    { 
+      from: 'SOL', 
+      to: 'USDC', 
+      fromLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png',
+      toLogo: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png'
+    },
+    { 
+      from: 'AVAX', 
+      to: 'ETH', 
+      fromLogo: '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png',
+      toLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png'
+    },
+    { 
+      from: 'USDT', 
+      to: 'BTC', 
+      fromLogo: '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png',
+      toLogo: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png'
+    },
+    { 
+      from: 'USDC', 
+      to: 'ETH', 
+      fromLogo: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png',
+      toLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png'
+    },
+    { 
+      from: 'ETH', 
+      to: 'BNB', 
+      fromLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png',
+      toLogo: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png'
+    },
+    { 
+      from: 'BTC', 
+      to: 'SOL', 
+      fromLogo: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png',
+      toLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png'
+    },
   ];
 
   return (
@@ -38,11 +83,13 @@ export const PopularSwapRoutes = () => {
               key={index}
               className="glass-card p-4 hover:scale-105 transition-all duration-300 group cursor-pointer"
             >
-              <div className="flex items-center justify-between">
+               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 ${route.fromColor} rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg`}>
-                    {route.from.slice(0, 2)}
-                  </div>
+                  <img 
+                    src={route.fromLogo} 
+                    alt={route.from} 
+                    className="w-8 h-8 rounded-full object-cover shadow-lg"
+                  />
                   <div className="text-sm font-medium text-foreground">
                     {route.from}
                   </div>
@@ -54,9 +101,11 @@ export const PopularSwapRoutes = () => {
                   <div className="text-sm font-medium text-foreground">
                     {route.to}
                   </div>
-                  <div className={`w-8 h-8 ${route.toColor} rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg`}>
-                    {route.to.slice(0, 2)}
-                  </div>
+                  <img 
+                    src={route.toLogo} 
+                    alt={route.to} 
+                    className="w-8 h-8 rounded-full object-cover shadow-lg"
+                  />
                 </div>
               </div>
               

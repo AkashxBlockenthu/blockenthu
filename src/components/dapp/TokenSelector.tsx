@@ -21,27 +21,25 @@ interface Token {
 }
 
 const popularTokens: Token[] = [
-  { symbol: 'ETH', name: 'Ethereum', icon: '🔷', balance: '0.00', price: '$2,341.23' },
-  { symbol: 'USDC', name: 'USD Coin', icon: '💎', balance: '0.00', price: '$1.00' },
-  { symbol: 'USDT', name: 'Tether', icon: '💚', balance: '0.00', price: '$1.00' },
-  { symbol: 'WBTC', name: 'Wrapped Bitcoin', icon: '🟠', balance: '0.00', price: '$43,521.45' },
-  { symbol: 'UNI', name: 'Uniswap', icon: '🦄', balance: '0.00', price: '$7.23' },
-  { symbol: 'WETH', name: 'Wrapped Ether', icon: '🔷', balance: '0.00', price: '$2,341.23' },
-  { symbol: 'BNB', name: 'BNB', icon: '🟡', balance: '0.00', price: '$312.45' },
-  { symbol: 'SOL', name: 'Solana', icon: '🟢', balance: '0.00', price: '$98.76' },
-  { symbol: 'MATIC', name: 'Polygon', icon: '🟣', balance: '0.00', price: '$0.85' },
-  { symbol: 'AVAX', name: 'Avalanche', icon: '⛰️', balance: '0.00', price: '$36.78' },
+  { symbol: 'ETH', name: 'Ethereum', icon: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png', balance: '0.00', price: '$2,341.23' },
+  { symbol: 'USDC', name: 'USD Coin', icon: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png', balance: '0.00', price: '$1.00' },
+  { symbol: 'USDT', name: 'Tether', icon: '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png', balance: '0.00', price: '$1.00' },
+  { symbol: 'BTC', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', balance: '0.00', price: '$43,521.45' },
+  { symbol: 'BNB', name: 'BNB', icon: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', balance: '0.00', price: '$312.45' },
+  { symbol: 'SOL', name: 'Solana', icon: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', balance: '0.00', price: '$98.76' },
+  { symbol: 'AVAX', name: 'Avalanche', icon: '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', balance: '0.00', price: '$36.78' },
+  { symbol: 'TUSD', name: 'TrueUSD', icon: '/lovable-uploads/37c33a9c-66a6-4d58-87b5-dbf99e3f9aa1.png', balance: '0.00', price: '$1.00' },
 ];
 
 const recentTokens: Token[] = [
-  { symbol: 'ETH', name: 'Ethereum', icon: '🔷' },
-  { symbol: 'USDC', name: 'USD Coin', icon: '💎' },
-  { symbol: 'UNI', name: 'Uniswap', icon: '🦄' },
+  { symbol: 'ETH', name: 'Ethereum', icon: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png' },
+  { symbol: 'USDC', name: 'USD Coin', icon: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png' },
+  { symbol: 'BTC', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png' },
 ];
 
 const favoriteTokens: Token[] = [
-  { symbol: 'ETH', name: 'Ethereum', icon: '🔷' },
-  { symbol: 'WBTC', name: 'Wrapped Bitcoin', icon: '🟠' },
+  { symbol: 'ETH', name: 'Ethereum', icon: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png' },
+  { symbol: 'BTC', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png' },
 ];
 
 interface TokenSelectorProps {
@@ -84,7 +82,7 @@ export const TokenSelector = ({ value, onChange, network }: TokenSelectorProps) 
       <DialogTrigger asChild>
         <Button variant="outline" className="glass-card px-4 py-2 h-auto">
           <div className="flex items-center gap-2">
-            <span className="text-xl">{value.icon}</span>
+            <img src={value.icon} alt={value.symbol} className="w-6 h-6 rounded-full object-cover" />
             <span className="font-semibold">{value.symbol}</span>
             <ChevronDown className="h-4 w-4 opacity-50" />
           </div>
@@ -129,7 +127,7 @@ export const TokenSelector = ({ value, onChange, network }: TokenSelectorProps) 
                   className="flex items-center justify-between p-3 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">{token.icon}</span>
+                    <img src={token.icon} alt={token.symbol} className="w-8 h-8 rounded-full object-cover" />
                     <div>
                       <div className="font-semibold">{token.symbol}</div>
                       <div className="text-sm text-muted-foreground">{token.name}</div>
@@ -150,7 +148,7 @@ export const TokenSelector = ({ value, onChange, network }: TokenSelectorProps) 
                   onClick={() => handleTokenSelect(token)}
                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
                 >
-                  <span className="text-xl">{token.icon}</span>
+                  <img src={token.icon} alt={token.symbol} className="w-8 h-8 rounded-full object-cover" />
                   <div>
                     <div className="font-semibold">{token.symbol}</div>
                     <div className="text-sm text-muted-foreground">{token.name}</div>
@@ -166,7 +164,7 @@ export const TokenSelector = ({ value, onChange, network }: TokenSelectorProps) 
                   onClick={() => handleTokenSelect(token)}
                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
                 >
-                  <span className="text-xl">{token.icon}</span>
+                  <img src={token.icon} alt={token.symbol} className="w-8 h-8 rounded-full object-cover" />
                   <div>
                     <div className="font-semibold">{token.symbol}</div>
                     <div className="text-sm text-muted-foreground">{token.name}</div>
