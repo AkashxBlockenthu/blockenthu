@@ -6,7 +6,7 @@ export const PopularSwapRoutes = () => {
       from: 'ETH', 
       to: 'SOL', 
       fromLogo: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png',
-      toLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png'
+      toLogo: '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png'
     },
     { 
       from: 'BTC', 
@@ -29,7 +29,7 @@ export const PopularSwapRoutes = () => {
     { 
       from: 'SOL', 
       to: 'USDC', 
-      fromLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png',
+      fromLogo: '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png',
       toLogo: '/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png'
     },
     { 
@@ -60,7 +60,7 @@ export const PopularSwapRoutes = () => {
       from: 'BTC', 
       to: 'SOL', 
       fromLogo: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png',
-      toLogo: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png'
+      toLogo: '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png'
     },
   ];
 

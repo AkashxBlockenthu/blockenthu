@@ -19,7 +19,7 @@ export const TrustSection = () => {
     { name: "Ethereum", logo: "/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png" },
     { name: "Bitcoin", logo: "/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png" },
     { name: "BNB Chain", logo: "/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png" },
-    { name: "Solana", logo: "/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png" },
+    { name: "Solana", logo: "/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png" },
     { name: "Avalanche", logo: "/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png" },
     { name: "USDT", logo: "/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png" },
     { name: "USDC", logo: "/lovable-uploads/69ac5a8c-c09a-44db-80a2-634be9892276.png" },

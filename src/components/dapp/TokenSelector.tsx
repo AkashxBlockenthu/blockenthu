@@ -26,7 +26,7 @@ const popularTokens: Token[] = [
   { symbol: 'USDT', name: 'Tether', icon: '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png', balance: '0.00', price: '$1.00' },
   { symbol: 'BTC', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', balance: '0.00', price: '$43,521.45' },
   { symbol: 'BNB', name: 'BNB', icon: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', balance: '0.00', price: '$312.45' },
-  { symbol: 'SOL', name: 'Solana', icon: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', balance: '0.00', price: '$98.76' },
+  { symbol: 'SOL', name: 'Solana', icon: '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png', balance: '0.00', price: '$98.76' },
   { symbol: 'AVAX', name: 'Avalanche', icon: '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', balance: '0.00', price: '$36.78' },
   { symbol: 'TUSD', name: 'TrueUSD', icon: '/lovable-uploads/37c33a9c-66a6-4d58-87b5-dbf99e3f9aa1.png', balance: '0.00', price: '$1.00' },
 ];

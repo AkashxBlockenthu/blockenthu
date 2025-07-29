@@ -157,7 +157,7 @@ export const CTASection = () => {
                 const logos = [
                   '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png', // Ethereum
                   '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', // BNB
-                  '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', // Solana
+                  '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png', // Solana
                   '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', // Bitcoin
                   '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', // Avalanche
                   '/lovable-uploads/25059349-9a59-465c-bafe-884673227826.png', // USDT

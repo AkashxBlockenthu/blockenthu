@@ -18,7 +18,7 @@ interface Network {
 const networks: Network[] = [
   { id: 'ethereum', name: 'Ethereum', icon: '/lovable-uploads/aa3dd11f-114b-4014-8919-88aab10102d4.png', color: 'bg-blue-500' },
   { id: 'bsc', name: 'BSC', icon: '/lovable-uploads/0946246b-5cfa-49ab-805f-69cddc2df818.png', color: 'bg-yellow-500' },
-  { id: 'solana', name: 'Solana', icon: '/lovable-uploads/fc0ea06b-a2ca-40a3-9d5e-b887abb90b1b.png', color: 'bg-green-500' },
+  { id: 'solana', name: 'Solana', icon: '/lovable-uploads/5cf44c31-f4ea-4e5a-a388-4c5e3bd4df27.png', color: 'bg-green-500' },
   { id: 'avalanche', name: 'Avalanche', icon: '/lovable-uploads/e6b520ec-0c97-4b8f-ba92-9ddf981b8e56.png', color: 'bg-red-600' },
   { id: 'bitcoin', name: 'Bitcoin', icon: '/lovable-uploads/b23030ca-eca9-4394-a0d1-2c6bec108d69.png', color: 'bg-orange-500' },
 ];
