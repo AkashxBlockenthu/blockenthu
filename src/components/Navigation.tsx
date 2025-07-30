@@ -6,6 +6,17 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Logo on the left */}
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
+                alt="BlockEnthu Logo" 
+                className="h-10 w-auto"
+              />
+            </Link>
+          </div>
+
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <Link 
@@ -42,18 +53,6 @@ const Navigation = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </Button>
-          </div>
-
-          {/* Logo on the right */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-primary/80 rounded-lg">
-                <span className="text-primary-foreground font-bold text-lg">BE</span>
-              </div>
-              <span className="hidden sm:block text-xl font-bold text-foreground">
-                BlockEnthu
-              </span>
-            </Link>
           </div>
         </div>
       </div>
