@@ -12,7 +12,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
                 alt="BlockEnthu Logo" 
-                className="h-10 w-auto"
+                className="h-20 w-auto"
               />
             </Link>
           </div>
