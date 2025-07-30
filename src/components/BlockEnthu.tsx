@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Preloader } from './Preloader';
+import Navigation from './Navigation';
 import { HeroSection } from './sections/HeroSection';
 import { TrustSection } from './sections/TrustSection';
 import { PopularSwapRoutes } from './sections/PopularSwapRoutes';
@@ -24,7 +25,8 @@ export const BlockEnthu = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-        <HeroSection />
+      <Navigation />
+      <HeroSection />
         <TrustSection />
         <PopularSwapRoutes />
         <FeaturesSection />
