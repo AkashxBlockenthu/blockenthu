@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SwapInterface } from '@/components/dapp/SwapInterface';
 import { WalletConnect } from '@/components/dapp/WalletConnect';
 import { TransactionHistory } from '@/components/dapp/TransactionHistory';
@@ -18,11 +19,13 @@ export default function DApp() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
-                alt="BlockEnthu Logo" 
-                className="h-16 w-auto"
-              />
+              <Link to="/" className="cursor-pointer">
+                <img 
+                  src="/lovable-uploads/b9cc7675-3601-4456-ba44-db88bc5127a4.png" 
+                  alt="BlockEnthu Logo" 
+                  className="h-16 w-auto hover:opacity-80 transition-opacity"
+                />
+              </Link>
             </div>
             <WalletConnect />
           </div>
