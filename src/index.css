@@ -248,16 +248,35 @@
     background: radial-gradient(circle at center, hsl(var(--primary) / 0.1), transparent 70%);
   }
 
+  /* Marquee Animations for Popular Swap Routes */
   @keyframes marquee {
     0% {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 60s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 60s linear infinite;
+  }
+
+  .animate-marquee:hover,
+  .animate-marquee-reverse:hover {
+    animation-play-state: paused;
   }
 }

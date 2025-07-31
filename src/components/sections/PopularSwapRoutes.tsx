@@ -1,12 +1,6 @@
 import { ArrowRight, TrendingUp } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { useRef } from 'react';
 
 export const PopularSwapRoutes = () => {
-  const plugin1 = useRef(Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }));
-  const plugin2 = useRef(Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }));
-
   const allSwapRoutes = [
     { 
       from: 'ETH', 
@@ -82,47 +76,44 @@ export const PopularSwapRoutes = () => {
     },
   ];
 
-  // Split routes into two groups for different carousels
-  const firstRowRoutes = allSwapRoutes.slice(0, 6);
-  const secondRowRoutes = allSwapRoutes.slice(6, 12);
-
-  const renderCarouselItem = (route: typeof allSwapRoutes[0], index: number) => (
-    <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-      <div className="glass-card p-4 hover:scale-105 transition-all duration-300 group cursor-pointer">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img 
-              src={route.fromLogo} 
-              alt={route.from} 
-              className="w-8 h-8 rounded-full object-cover shadow-lg"
-            />
-            <div className="text-sm font-medium text-foreground">
-              {route.from}
-            </div>
-          </div>
-          
-          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          
-          <div className="flex items-center gap-3">
-            <div className="text-sm font-medium text-foreground">
-              {route.to}
-            </div>
-            <img 
-              src={route.toLogo} 
-              alt={route.to} 
-              className="w-8 h-8 rounded-full object-cover shadow-lg"
-            />
+  const renderRouteCard = (route: typeof allSwapRoutes[0], index: number | string) => (
+    <div 
+      key={index}
+      className="glass-card p-4 hover:scale-105 transition-all duration-300 group cursor-pointer min-w-[280px] mx-3"
+    >
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <img 
+            src={route.fromLogo} 
+            alt={route.from} 
+            className="w-8 h-8 rounded-full object-cover shadow-lg"
+          />
+          <div className="text-sm font-medium text-foreground">
+            {route.from}
           </div>
         </div>
         
-        {/* Hover effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+        
+        <div className="flex items-center gap-3">
+          <div className="text-sm font-medium text-foreground">
+            {route.to}
+          </div>
+          <img 
+            src={route.toLogo} 
+            alt={route.to} 
+            className="w-8 h-8 rounded-full object-cover shadow-lg"
+          />
+        </div>
       </div>
-    </CarouselItem>
+      
+      {/* Hover effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+    </div>
   );
 
   return (
-    <div className="section-spacing" style={{ background: 'linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-secondary)))' }}>
+    <div className="section-spacing overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-secondary)))' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -134,34 +125,25 @@ export const PopularSwapRoutes = () => {
           </p>
         </div>
 
-        {/* First Carousel - Moving Right */}
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[plugin1.current]}
-          className="w-full max-w-6xl mx-auto mb-8"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {firstRowRoutes.map((route, index) => renderCarouselItem(route, index))}
-          </CarouselContent>
-        </Carousel>
+        {/* First Marquee - Moving Left to Right */}
+        <div className="relative overflow-hidden mb-8">
+          <div className="flex animate-marquee">
+            {/* First set of items */}
+            {allSwapRoutes.slice(0, 6).map((route, index) => renderRouteCard(route, index))}
+            {/* Duplicate for seamless loop */}
+            {allSwapRoutes.slice(0, 6).map((route, index) => renderRouteCard(route, `dup-${index}`))}
+          </div>
+        </div>
 
-        {/* Second Carousel - Moving Left (Opposite Direction) */}
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-            direction: "rtl",
-          }}
-          plugins={[plugin2.current]}
-          className="w-full max-w-6xl mx-auto"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {secondRowRoutes.reverse().map((route, index) => renderCarouselItem(route, index))}
-          </CarouselContent>
-        </Carousel>
+        {/* Second Marquee - Moving Right to Left */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-marquee-reverse">
+            {/* First set of items */}
+            {allSwapRoutes.slice(6, 12).map((route, index) => renderRouteCard(route, index))}
+            {/* Duplicate for seamless loop */}
+            {allSwapRoutes.slice(6, 12).map((route, index) => renderRouteCard(route, `dup-${index}`))}
+          </div>
+        </div>
       </div>
     </div>
   );
