@@ -113,7 +113,7 @@ export const PopularSwapRoutes = () => {
   );
 
   return (
-    <div className="section-spacing overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(0 85% 35%), hsl(15 90% 45%), hsl(0 80% 50%))', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 20px rgba(220,38,127,0.3)' }}>
+    <div className="section-spacing overflow-hidden" style={{ background: 'linear-gradient(135deg, #ff1744, #e91e63, #ff5722)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
