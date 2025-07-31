@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BlockEnthu DeFi Design System - Dark theme with orange accents */
+/* BlockEnthu DeFi Design System - Dark theme with blue/violet gradients */
 
 @layer base {
   :root {
@@ -16,26 +16,26 @@
     --popover: 240 6% 8%;
     --popover-foreground: 0 0% 100%;
 
-    /* Orange Primary - DeFi Brand Color */
-    --primary: 24 96% 53%;
-    --primary-foreground: 0 0% 0%;
-    --primary-glow: 24 100% 65%;
+    /* Blue/Violet Primary - DeFi Brand Color */
+    --primary: 250 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 100% 75%;
 
-    --secondary: 240 4% 15%;
+    --secondary: 350 80% 55%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 240 4% 15%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 24 96% 53%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 350 80% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 6% 20%;
     --input: 240 6% 12%;
-    --ring: 24 96% 53%;
+    --ring: 250 100% 65%;
 
     --radius: 0.75rem;
 
@@ -43,18 +43,20 @@
     --primary-dark: 240 10% 4%;
     --surface-dark: 240 6% 9%;
     --surface-glass: 0 0% 100% / 0.05;
-    --glow-orange: 24 100% 65%;
+    --glow-blue: 250 100% 65%;
+    --glow-red: 350 80% 55%;
     --text-primary: 0 0% 100%;
     --text-secondary: 240 5% 65%;
     --grid-pattern: 240 6% 12%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(24 96% 53%), hsl(24 100% 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(250 100% 65%), hsl(260 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(350 80% 55%), hsl(0 85% 65%));
     --gradient-dark: linear-gradient(180deg, hsl(240 10% 4%), hsl(240 6% 9%));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(24 96% 53% / 0.3), transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(250 100% 65% / 0.3), transparent 70%);
 
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(24 96% 53% / 0.3);
+    --shadow-glow: 0 0 40px hsl(250 100% 65% / 0.3);
     --shadow-card: 0 8px 32px hsl(240 10% 4% / 0.8);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -72,19 +74,19 @@
     --card-foreground: 0 0% 100%;
     --popover: 240 6% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 24 96% 53%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 240 4% 15%;
+    --primary: 250 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 80% 55%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 4% 15%;
     --muted-foreground: 240 5% 65%;
-    --accent: 24 96% 53%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 350 80% 55%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 6% 20%;
     --input: 240 6% 12%;
-    --ring: 24 96% 53%;
+    --ring: 250 100% 65%;
   }
 }
 
