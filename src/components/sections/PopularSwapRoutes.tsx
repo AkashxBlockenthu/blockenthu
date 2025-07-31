@@ -1,4 +1,5 @@
 import { ArrowRight, TrendingUp } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 export const PopularSwapRoutes = () => {
   const swapRoutes = [
@@ -77,43 +78,52 @@ export const PopularSwapRoutes = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-          {swapRoutes.map((route, index) => (
-            <div 
-              key={index}
-              className="glass-card p-4 hover:scale-105 transition-all duration-300 group cursor-pointer"
-            >
-               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src={route.fromLogo} 
-                    alt={route.from} 
-                    className="w-8 h-8 rounded-full object-cover shadow-lg"
-                  />
-                  <div className="text-sm font-medium text-foreground">
-                    {route.from}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {swapRoutes.map((route, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <div className="glass-card p-4 hover:scale-105 transition-all duration-300 group cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src={route.fromLogo} 
+                        alt={route.from} 
+                        className="w-8 h-8 rounded-full object-cover shadow-lg"
+                      />
+                      <div className="text-sm font-medium text-foreground">
+                        {route.from}
+                      </div>
+                    </div>
+                    
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="text-sm font-medium text-foreground">
+                        {route.to}
+                      </div>
+                      <img 
+                        src={route.toLogo} 
+                        alt={route.to} 
+                        className="w-8 h-8 rounded-full object-cover shadow-lg"
+                      />
+                    </div>
                   </div>
+                  
+                  {/* Hover effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
                 </div>
-                
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                
-                <div className="flex items-center gap-3">
-                  <div className="text-sm font-medium text-foreground">
-                    {route.to}
-                  </div>
-                  <img 
-                    src={route.toLogo} 
-                    alt={route.to} 
-                    className="w-8 h-8 rounded-full object-cover shadow-lg"
-                  />
-                </div>
-              </div>
-              
-              {/* Hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </div>
   );
