@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Preloader } from './Preloader';
 import Navigation from './Navigation';
 import { HeroSection } from './sections/HeroSection';
 import { TrustSection } from './sections/TrustSection';
@@ -8,21 +6,6 @@ import { FeaturesSection } from './sections/FeaturesSection';
 import { CTASection } from './sections/CTASection';
 
 export const BlockEnthu = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100); // Short delay to allow preloader to show
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <Preloader onComplete={() => setIsLoading(false)} />;
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
