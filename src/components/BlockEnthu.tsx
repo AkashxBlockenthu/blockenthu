@@ -29,11 +29,13 @@ export const BlockEnthu = () => {
       <HeroSection />
         <TrustSection />
         <PopularSwapRoutes />
-        <FeaturesSection />
+        <div id="features">
+          <FeaturesSection />
+        </div>
       <CTASection />
       
       {/* Footer */}
-      <footer className="section-spacing border-t border-border/50">
+      <footer id="about" className="section-spacing border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             {/* Logo */}
