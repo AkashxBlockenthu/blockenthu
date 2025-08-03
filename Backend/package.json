@@ -1,0 +1,65 @@
+{
+  "name": "blockenthu",
+  "version": "2.0.0",
+  "description": "Blockenthu Backend API with TypeScript and Express",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "clear-cache": "ts-node src/scripts/clear-cache.ts"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "api",
+    "chrome-extension"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@1inch/fusion-sdk": "^2.3.6",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
+    "config": "^3.3.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.1",
+    "googleapis": "^144.0.0",
+    "helmet": "^7.1.0",
+    "moment-timezone": "^0.5.47",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "serverless": "^3.39.0",
+    "serverless-http": "^3.2.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/config": "^3.3.4",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.10.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^14.3.4",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.0"
+  },
+  "overrides": {
+    "serverless-offline": {
+      "serverless": "$serverless"
+    }
+  }
+}
