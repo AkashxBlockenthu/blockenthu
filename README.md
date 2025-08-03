@@ -186,14 +186,6 @@ This project was built for the ETH Global Unite DeFi hackathon, specifically for
 - **Network Coverage**: 15+ blockchains with 99.9% uptime monitoring
 - **Price Impact**: Minimized through advanced order splitting algorithms
 
-## 🛣️ Roadmap
-
-- [x] **Q3 2024**: Core swap functionality with 4 major chains
-- [x] **Q4 2024**: Advanced trading interface with TradingView integration
-- [ ] **Q1 2025**: Mobile app release with push notifications
-- [ ] **Q2 2025**: 25+ blockchain support including emerging L2s
-- [ ] **Q3 2025**: Institutional features, API access, and limit orders
-- [ ] **Q4 2025**: DeFi yield farming and liquidity provision features
 
 ## 🤝 Contributing
 
