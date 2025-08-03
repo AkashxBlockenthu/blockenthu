@@ -1,4 +1,4 @@
-# Blockenthu 🌉 for 1inch Unite hackathon by (Nikhil & Akash)
+# Blockenthu ⚡️ for 1 inch Unite hackathon by (Nikhil & Akash)
 
 **Cross-Chain Swaps Made Simple**
 
