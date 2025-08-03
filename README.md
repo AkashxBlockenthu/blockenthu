@@ -1,4 +1,4 @@
-# Blockenthu ⚡️ for 1 inch Unite hackathon by (Nikhil & Akash)
+# Blockenthu ⚡️ for ETH-global 1inch Unite hackathon by (Nikhil & Akash)
 
 **Cross-Chain Swaps Made Simple**
 
@@ -8,19 +8,17 @@
 
 Blockenthu is a next-generation cross-chain DEX aggregator that eliminates blockchain fragmentation by enabling seamless token swaps across multiple networks through a single, intelligent interface. Built extensively using 1inch APIs, our platform finds optimal routes across 15+ blockchains to deliver the best rates with minimal fees.
 
+
 ## 🖼️ Product Demo
 
 ### Landing Page
-![Blockenthu Landing](https://github.com/blockenthu/blockenthu-dex/raw/main/public/demo/landing.png)
-
+<img width="1440" height="790" alt="Screenshot 2025-08-03 at 9 36 12 PM" src="https://github.com/user-attachments/assets/fd220d71-baf0-40bb-b181-e8c2ad738571" />
 ### Advanced Swap Interface
-![Swap Interface](https://github.com/blockenthu/blockenthu-dex/raw/main/public/demo/swap-interface.png)
+<img width="3024" height="3076" alt="22" src="https://github.com/user-attachments/assets/b340edfc-48ea-4c95-b8aa-9c81955a302d" />
+
 
 ### Live Trading with Route Optimization
-![Route Optimization](https://github.com/blockenthu/blockenthu-dex/raw/main/public/demo/route-optimization.png)
-
-### TradingView Integration
-![Trading Charts](https://github.com/blockenthu/blockenthu-dex/raw/main/public/demo/trading-charts.png)
+<img width="3024" height="2086" alt="localhost_8080_app (1)" src="https://github.com/user-attachments/assets/3418c7ef-88f4-4810-8762-8b917fb3ac69" />
 
 ## 🚀 Features
 
