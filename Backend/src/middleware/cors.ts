@@ -1,18 +1,26 @@
 import { Request, Response, NextFunction } from 'express';
 
 export const corsMiddleware = (req: Request, res: Response, next: NextFunction): void => {
-  res.header("Access-Control-Allow-Origin", "*"); // Allow all origins
-  res.header("Access-Control-Allow-Methods", "*"); // Allow all HTTP methods
-  res.header("Access-Control-Allow-Headers", "*"); // Allow all headers
-  res.header("Access-Control-Allow-Credentials", "true"); // Optional: Allow credentials if needed
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  // Allow these HTTP methods
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  // Allow all origins (you can restrict this to specific domains in production)
+  res.header("Access-Control-Allow-Origin", "*");
+  
+  // Allow specific headers
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma");
+  
+  // Allow specific HTTP methods
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+  
+  // Allow credentials if needed
+  res.header("Access-Control-Allow-Credentials", "true");
+  
+  // Set cache control for preflight requests
+  res.header("Access-Control-Max-Age", "86400"); // 24 hours
   
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
+    res.status(200).end();
     return;
   }
+  
   next();
 }; 

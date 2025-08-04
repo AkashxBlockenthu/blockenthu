@@ -18,25 +18,42 @@ import historyRoutes from './routes/history';
 
 const app = express();
 
-// Security middleware
-app.use(helmet());
+// Security middleware - configure helmet to allow CORS
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  crossOriginOpenerPolicy: { policy: "unsafe-none" },
+  crossOriginEmbedderPolicy: false
+}));
 
 // Logging middleware
 if (appConfig.nodeEnv !== 'production') {
   app.use(morgan('dev'));
 }
 
+// CORS middleware - MUST be before routes
+app.use(cors({
+  origin: '*', // Allow all origins for now
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization', 'Cache-Control', 'Pragma'],
+  credentials: true,
+  maxAge: 86400 // 24 hours
+}));
+
+// Also use custom CORS middleware for additional headers
+app.use(corsMiddleware);
+
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// CORS middleware
-
-app.use('/api/swap', swapRoutes);
-app.use('/api/chart', chartRoutes);
-app.use('/api/bridge', bridgeRoutes);
-app.use('/api/history', historyRoutes);
-app.use(corsMiddleware);
+// Global OPTIONS handler for preflight requests
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma');
+  res.header('Access-Control-Max-Age', '86400');
+  res.status(200).end();
+});
 
 // Health check endpoint (no auth needed)
 app.get('/health', (req, res) => {
@@ -44,6 +61,15 @@ app.get('/health', (req, res) => {
     status: 'OK', 
     timestamp: new Date().toISOString(),
     environment: appConfig.nodeEnv 
+  });
+});
+
+// CORS test endpoint
+app.get('/api/test', (req, res) => {
+  res.json({ 
+    message: 'CORS test successful',
+    timestamp: new Date().toISOString(),
+    headers: req.headers
   });
 });
 
