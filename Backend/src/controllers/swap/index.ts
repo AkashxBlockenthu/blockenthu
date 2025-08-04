@@ -11,14 +11,52 @@ const getApiUrl = (chainId: number, path: string) => {
 }
 
 export const getQuote = async (req: Request, res: Response) => {
-    const { fromTokenAddress, toTokenAddress, amount, chainId } = req.query;
+    const { 
+        fromTokenAddress, 
+        toTokenAddress, 
+        amount, 
+        chainId,
+        slippage,
+        includeTokensInfo,
+        includeProtocols,
+        includeGas,
+        complexityLevel,
+        gasLimit,
+        mainRouteParts,
+        parts,
+        gasPrice,
+        allowPartialFill,
+        compatibility,
+        usePermit2
+    } = req.query;
 
     if (!fromTokenAddress || !toTokenAddress || !amount || !chainId) {
         return res.status(400).json({ error: 'Missing required query parameters' });
     }
 
     try {
-        const url = getApiUrl(Number(chainId), `/quote?fromTokenAddress=${fromTokenAddress}&toTokenAddress=${toTokenAddress}&amount=${amount}`);
+        // Build query parameters
+        const params = new URLSearchParams({
+            fromTokenAddress: fromTokenAddress as string,
+            toTokenAddress: toTokenAddress as string,
+            amount: amount as string,
+        });
+
+        // Add optional parameters if they exist
+        if (slippage) params.append('slippage', slippage as string);
+        if (includeTokensInfo) params.append('includeTokensInfo', includeTokensInfo as string);
+        if (includeProtocols) params.append('includeProtocols', includeProtocols as string);
+        if (includeGas) params.append('includeGas', includeGas as string);
+        if (complexityLevel) params.append('complexityLevel', complexityLevel as string);
+        if (gasLimit) params.append('gasLimit', gasLimit as string);
+        if (mainRouteParts) params.append('mainRouteParts', mainRouteParts as string);
+        if (parts) params.append('parts', parts as string);
+        if (gasPrice) params.append('gasPrice', gasPrice as string);
+        if (allowPartialFill) params.append('allowPartialFill', allowPartialFill as string);
+        if (compatibility) params.append('compatibility', compatibility as string);
+        if (usePermit2) params.append('usePermit2', usePermit2 as string);
+
+        const url = getApiUrl(Number(chainId), `/quote?${params.toString()}`);
         console.log('Making request to:', url);
         
         const { data } = await axios.get<QuoteResponse>(url, {
