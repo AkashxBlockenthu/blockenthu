@@ -30,30 +30,21 @@ if (appConfig.nodeEnv !== 'production') {
   app.use(morgan('dev'));
 }
 
-// CORS middleware - MUST be before routes
+// CORS middleware - using built-in cors package
 app.use(cors({
   origin: '*', // Allow all origins for now
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization', 'Cache-Control', 'Pragma'],
   credentials: true,
-  maxAge: 86400 // 24 hours
+  maxAge: 86400, // 24 hours
+  preflightContinue: false,
+  optionsSuccessStatus: 200
 }));
-
-// Also use custom CORS middleware for additional headers
-app.use(corsMiddleware);
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Global OPTIONS handler for preflight requests
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma');
-  res.header('Access-Control-Max-Age', '86400');
-  res.status(200).end();
-});
 
 // Health check endpoint (no auth needed)
 app.get('/health', (req, res) => {
