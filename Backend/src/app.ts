@@ -31,6 +31,11 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
+
+app.use('/api/swap', swapRoutes);
+app.use('/api/chart', chartRoutes);
+app.use('/api/bridge', bridgeRoutes);
+app.use('/api/history', historyRoutes);
 app.use(corsMiddleware);
 
 // Health check endpoint (no auth needed)
