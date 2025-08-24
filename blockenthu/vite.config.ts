@@ -7,10 +7,13 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8080,
+    port: 5173,
     proxy: {
+      // This proxies requests from /api to your backend server during development.
+      // In production, you should configure a reverse proxy (e.g., Nginx)
+      // to forward requests from /api to your backend service.
       '/api': {
-        target: 'http://ec2-35-95-134-254.us-west-2.compute.amazonaws.com:3000',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         secure: false,
       },
